@@ -18,9 +18,13 @@ public class PlatformerCharacter2D : MonoBehaviour
 	bool grounded = false;								// Whether or not the player is grounded.
 	Transform ceilingCheck;								// A position marking where to check for ceilings
 	float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
+
+	Transform wallCheck;
+	float wallRadius = .01f;
+	bool walled = false;
 	Animator anim;										// Reference to the player's animator component.
-
-
+	[SerializeField] int maxjump = 2; 					//Reference to the player's max number of air jumps
+	int njump;											//number of jumps left
     void Awake()
 	{
 		// Setting up references.
@@ -79,11 +83,32 @@ public class PlatformerCharacter2D : MonoBehaviour
 		}
 
         // If the player should jump...
-        if (grounded && jump) {
-            // Add a vertical force to the player.
+
+		//If player is against a wall in the air, perform a walljump.
+		//if(jump && Physics2D.OverlapCircle(wallCheck.position, wallRadius, whatIsGround))
+		//{
+		//	GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+		//}
+
+		//else, try to perform a regular jump.
+		if (njump>1 && jump) {
+            
             anim.SetBool("Ground", false);
+
+			// If we're in the air, we first reset the vertical velocity before adding a new force, so that each jump feels consistent
+			if(!grounded){GetComponent<Rigidbody2D>().velocity= new Vector2(GetComponent<Rigidbody2D>().velocity.x,0);};
+			// Add a vertical force to the player.
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+			njump=njump-1;
         }
+
+		//If the player touches the ground, reset the number of available jumps
+		if(grounded)
+		{
+			njump=maxjump;
+		}
+
+
 	}
 
 	
