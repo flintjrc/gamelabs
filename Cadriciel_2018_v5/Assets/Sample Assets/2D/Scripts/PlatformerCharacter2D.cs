@@ -5,7 +5,9 @@ public class PlatformerCharacter2D : MonoBehaviour
 	bool facingRight = true;							// For determining which way the player is currently facing.
 
 	[SerializeField] float maxSpeed = 10f;				// The fastest the player can travel in the x axis.
-	[SerializeField] float jumpForce = 400f;			// Amount of force added when the player jumps.	
+	[SerializeField] float minJumpForce= 800f;
+	[SerializeField] float jumpForce;			// Amount of force added when the player jumps.	
+	[SerializeField] float maxJumpForce = 2000f;
 
 	[Range(0, 1)]
 	[SerializeField] float crouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -20,8 +22,9 @@ public class PlatformerCharacter2D : MonoBehaviour
 	float ceilingRadius = .01f;							// Radius of the overlap circle to determine if the player can stand up
 
 	Transform wallCheck;
-	float wallRadius = .01f;
+	float wallRadius = .5f;
 	bool walled = false;
+	[SerializeField] float wallJumpForce = 1000f;
 	Animator anim;										// Reference to the player's animator component.
 	[SerializeField] int maxjump = 2; 					//Reference to the player's max number of air jumps
 	int njump;											//number of jumps left
@@ -30,6 +33,7 @@ public class PlatformerCharacter2D : MonoBehaviour
 		// Setting up references.
 		groundCheck = transform.Find("GroundCheck");
 		ceilingCheck = transform.Find("CeilingCheck");
+		wallCheck = transform.Find("WallCheck");
 		anim = GetComponent<Animator>();
 	}
 
@@ -85,13 +89,16 @@ public class PlatformerCharacter2D : MonoBehaviour
         // If the player should jump...
 
 		//If player is against a wall in the air, perform a walljump.
-		//if(jump && Physics2D.OverlapCircle(wallCheck.position, wallRadius, whatIsGround))
-		//{
-		//	GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
-		//}
+		if(jump && Physics2D.OverlapCircle(wallCheck.position, wallRadius, whatIsGround) && !grounded)
+		{
+			int sign = 1;
+			if (facingRight) sign = -1;
+			GetComponent<Rigidbody2D>().velocity= new Vector2(0,0);
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(wallJumpForce, jumpForce));
+		}
 
 		//else, try to perform a regular jump.
-		if (njump>1 && jump) {
+		else if (njump>1 && jump && !crouch) {
             
             anim.SetBool("Ground", false);
 
@@ -100,14 +107,27 @@ public class PlatformerCharacter2D : MonoBehaviour
 			// Add a vertical force to the player.
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
 			njump=njump-1;
+			jumpForce = minJumpForce;
         }
 
 		//If the player touches the ground, reset the number of available jumps
-		if(grounded)
+		if(grounded && !crouch)
 		{
 			njump=maxjump;
+			jumpForce = minJumpForce;
 		}
 
+		//If the player crouches and press jump, then accumulate energy
+		if(crouch && Input.GetButton("Jump") && jumpForce<maxJumpForce){
+			jumpForce += 10.0f;
+		}
+
+		//If the player has accumulated energy and release jump or crouch button, then jump
+		if(jumpForce>minJumpForce && (!Input.GetKey(KeyCode.LeftControl) || !Input.GetButton("Jump"))){
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
+			njump=njump-1;
+			jumpForce = minJumpForce;
+		}
 
 	}
 
