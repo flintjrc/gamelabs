@@ -21,7 +21,7 @@ public class CameraFollow : MonoBehaviour
 		// Setting up the reference.
 		playerObject = GameObject.FindGameObjectWithTag("Player").GetComponent("PlatformerCharacter2D") as PlatformerCharacter2D;
 		player = GameObject.FindGameObjectWithTag("Player").transform;
-		grounded = playerObject.grounded;
+		grounded = playerObject.getGrounded();
 	}
 
 
@@ -41,7 +41,7 @@ public class CameraFollow : MonoBehaviour
 
 	void Update ()
 	{
-		grounded = playerObject.grounded;
+		grounded = playerObject.getGrounded();
 		TrackPlayer();
 	}
 	
