@@ -133,6 +133,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &141351838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141351836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0218c1aebbc8445a6f7417c1d4ccca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 10
+  jumpForce: 800
 --- !u!65 &141351839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -236,7 +249,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118374190486860, guid: 513a08669601e7e4a8e38fcaf714c18a, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4118374190486860, guid: 513a08669601e7e4a8e38fcaf714c18a, type: 2}
       propertyPath: m_LocalRotation.z
@@ -244,7 +257,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4118374190486860, guid: 513a08669601e7e4a8e38fcaf714c18a, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4118374190486860, guid: 513a08669601e7e4a8e38fcaf714c18a, type: 2}
       propertyPath: m_RootOrder
@@ -253,6 +266,10 @@ Prefab:
     - target: {fileID: 1337956163056606, guid: 513a08669601e7e4a8e38fcaf714c18a, type: 2}
       propertyPath: m_Name
       value: Ringo
+      objectReference: {fileID: 0}
+    - target: {fileID: 4118374190486860, guid: 513a08669601e7e4a8e38fcaf714c18a, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 513a08669601e7e4a8e38fcaf714c18a, type: 2}
