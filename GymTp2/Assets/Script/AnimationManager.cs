@@ -25,5 +25,9 @@ public class AnimationManager : MonoBehaviour {
         RightLegAnimator.SetFloat("Speed", Mathf.Abs(HorizontalMove));
         LeftLegAnimator.SetFloat("Speed", Mathf.Abs(HorizontalMove));
 
+        
+        LeftHandAnimator.SetBool("Attack", Input.GetButtonDown("Fire1"));
+        
+
     }
 }
