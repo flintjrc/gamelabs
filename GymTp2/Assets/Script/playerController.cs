@@ -5,7 +5,14 @@ using UnityEngine;
 public class playerController : MonoBehaviour {
 	bool facingRight = true;
 	[SerializeField] float maxSpeed = 10f;	
-	[SerializeField] float jumpForce= 80f;	
+	[SerializeField] float jumpForce= 300f;
+	[SerializeField] float fallForce= 10f;
+
+	[SerializeField] bool grounded= false;
+
+	LayerMask WhatisGround;
+
+	[SerializeField] bool fallForceAdded = false;
 	Rigidbody playerRigibody;
 
 	// Use this for initialization
@@ -16,7 +23,6 @@ public class playerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-	bool crouch = Input.GetKey(KeyCode.LeftControl);
 	#if CROSS_PLATFORM_INPUT
         if (CrossPlatformInput.GetButtonDown("Jump")) playerJump();
 		float h = CrossPlatformInput.GetAxis("Horizontal");
@@ -29,6 +35,7 @@ public class playerController : MonoBehaviour {
 
 	void playerJump(){
 		playerRigibody.AddForce(new Vector2(0f, jumpForce));
+		fallForceAdded = false;
 	}
 
 
@@ -44,6 +51,8 @@ public class playerController : MonoBehaviour {
 			else if(move < 0 && facingRight)
 				// ... flip the player.
 				Flip();
+			// Make the character falls a bit faster to prevent "floaty" jump
+			 if(playerRigibody.velocity.y <0 && !fallForceAdded) playerRigibody.AddForce(new Vector2(0f, -fallForce));
 	}
 
 	void Flip ()
