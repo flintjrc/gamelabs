@@ -18,7 +18,7 @@ public class playerController : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		playerRigibody = GetComponent<Rigidbody>();
-		playerRigibody.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
+		playerRigibody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
 	}
 	
 	// Update is called once per frame
