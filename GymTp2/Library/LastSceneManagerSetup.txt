@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/characterTestScene.unity
+- path: Assets/Scenes/Gym_21.unity
   isLoaded: 1
   isActive: 1

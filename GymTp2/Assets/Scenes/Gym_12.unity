@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01016c34a6f93bb4ab385f7d1976d39c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Object: {fileID: 155395274}
+  BoxObject: {fileID: 155395278}
   NameOfInputAttack: Fire1
 --- !u!1 &141351836 stripped
 GameObject:
@@ -231,9 +231,9 @@ BoxCollider:
   m_GameObject: {fileID: 155395274}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.01, y: 0.0019077811, z: 0.02}
+  m_Size: {x: 0.01, y: 0.001, z: 0.02}
   m_Center: {x: -0.0000022129243, y: -0.000004829153, z: 0.008023769}
 --- !u!1 &170076733
 GameObject:
@@ -468,6 +468,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 4248366560149308, guid: 513a08669601e7e4a8e38fcaf714c18a, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 513a08669601e7e4a8e38fcaf714c18a, type: 2}
   m_IsPrefabAsset: 0
@@ -480,7 +484,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4394043916320050, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2.342
+      value: 4.21
       objectReference: {fileID: 0}
     - target: {fileID: 4394043916320050, guid: e333f712e0f4cd54694dff55e08610dc, type: 2}
       propertyPath: m_LocalPosition.y
@@ -577,9 +581,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4c757ee6365a141bbeb185093135ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnnemyHealth: 3
+  EnnemyHealth: 5
   DamageReceived: 1
-  ennemySpriteInvincible: {fileID: 1738627037}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +802,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1285641604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.039, y: 0.532, z: 0.092}
+  m_LocalPosition: {x: -3.85, y: 0.532, z: 0.092}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1018143836}
@@ -819,7 +822,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnnemyHealth: 3
   DamageReceived: 1
-  ennemySpriteInvincible: {fileID: 1018143837}
 --- !u!1001 &1487645093
 Prefab:
   m_ObjectHideFlags: 0
@@ -829,31 +831,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000011993294824, guid: 23d2f61651b26c24d999b508a4457b7e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.097
+      value: -0.033
       objectReference: {fileID: 0}
     - target: {fileID: 4000011993294824, guid: 23d2f61651b26c24d999b508a4457b7e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.27
+      value: -0.305
       objectReference: {fileID: 0}
     - target: {fileID: 4000011993294824, guid: 23d2f61651b26c24d999b508a4457b7e, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.03
+      value: 0.014
       objectReference: {fileID: 0}
     - target: {fileID: 4000011993294824, guid: 23d2f61651b26c24d999b508a4457b7e, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0.6566851
+      value: -0.46139643
       objectReference: {fileID: 0}
     - target: {fileID: 4000011993294824, guid: 23d2f61651b26c24d999b508a4457b7e, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.27855706
+      value: 0.547184
       objectReference: {fileID: 0}
     - target: {fileID: 4000011993294824, guid: 23d2f61651b26c24d999b508a4457b7e, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.262595
+      value: 0.53607833
       objectReference: {fileID: 0}
     - target: {fileID: 4000011993294824, guid: 23d2f61651b26c24d999b508a4457b7e, type: 2}
       propertyPath: m_LocalRotation.w
-      value: -0.64978033
+      value: -0.44757462
       objectReference: {fileID: 0}
     - target: {fileID: 4000011993294824, guid: 23d2f61651b26c24d999b508a4457b7e, type: 2}
       propertyPath: m_RootOrder
@@ -873,7 +875,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011993294824, guid: 23d2f61651b26c24d999b508a4457b7e, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 45
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 4000011993294824, guid: 23d2f61651b26c24d999b508a4457b7e, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -901,7 +903,7 @@ GameObject:
   - component: {fileID: 1520392807}
   - component: {fileID: 1520392806}
   - component: {fileID: 1520392805}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -970,7 +972,7 @@ Transform:
   m_GameObject: {fileID: 1520392804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.02, y: -0.31, z: 0}
-  m_LocalScale: {x: 10.65394, y: 0.419, z: 1}
+  m_LocalScale: {x: 30, y: 0.419, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1021,8 +1023,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!212 &1738627037 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 212118322488706500, guid: e333f712e0f4cd54694dff55e08610dc,
-    type: 2}
-  m_PrefabInternal: {fileID: 326045959}

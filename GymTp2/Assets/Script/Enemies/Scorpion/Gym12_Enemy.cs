@@ -11,7 +11,7 @@ public class Gym12_Enemy : MonoBehaviour {
     [SerializeField] private int DamageReceived = 1;
 
     //Sprite which become red when the ennemy is invincible after an attack
-    [SerializeField] private SpriteRenderer ennemySpriteInvincible;
+    private SpriteRenderer[] enemySpritesInvincible;
 
     //Color of the invincible state
     private Color InvincibleColor = Color.red;
@@ -21,6 +21,18 @@ public class Gym12_Enemy : MonoBehaviour {
 
     //True if the ennemy can be hurt
     private bool NotInvincible = true;
+
+    //Rigidbody EnemyRigidBody;
+
+
+    void Start()
+    {
+        //EnemyRigidBody = GetComponent<Rigidbody>();
+        enemySpritesInvincible = gameObject.GetComponentsInChildren<SpriteRenderer>();
+
+        //EnemyRigidBody.constraints = RigidbodyConstraints.FreezePositionZ;
+    }
+
 
     //Function which is called when the ennemy is attacked
     void DeductPoints(int DamageAmount)
@@ -40,6 +52,7 @@ public class Gym12_Enemy : MonoBehaviour {
             //We need to use startCoroutine to call the function "isInvicible" because we need to measure the time of the invincible state
             StartCoroutine(isInvicible());
         }
+        
     }
 
     void FixedUpdate () {
@@ -58,14 +71,25 @@ public class Gym12_Enemy : MonoBehaviour {
     {
         //Ennemy is invincible, then we put the value at true
         NotInvincible = false;
-        //The sprite of the ennemy become red
-        ennemySpriteInvincible.color = InvincibleColor;
+
+        foreach (SpriteRenderer SpriteEnemy in enemySpritesInvincible)
+        {
+            //The sprite of the ennemy become red
+            SpriteEnemy.color = InvincibleColor;
+        }
+
         //We wait for 0.75s
         yield return new WaitForSeconds(0.75f);
+
         //Ennemy is open to attack
         NotInvincible = true;
+
         //The sprite of ennemy become normal
-        ennemySpriteInvincible.color = NormalColor;
+        foreach (SpriteRenderer SpriteEnemy in enemySpritesInvincible)
+        {
+            //The sprite of the ennemy become red
+            SpriteEnemy.color = NormalColor;
+        }
     }
 
 }

@@ -62,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\AnimationManager.cs" />
+    <Compile Include="Assets\Script\Enemies\Scorpion\Gym12_Enemy.cs" />
+    <Compile Include="Assets\Script\Gym11_torch.cs" />
+    <Compile Include="Assets\Script\Gym12_ObjectHold.cs" />
+    <Compile Include="Assets\Script\Gym21_heal.cs" />
+    <Compile Include="Assets\Script\Gym21_hurt.cs" />
+    <Compile Include="Assets\Script\Gym21_Player.cs" />
     <Compile Include="Assets\Script\playerController.cs" />
     <None Include="Assets\Medieval Sword\read me.txt" />
     <Reference Include="UnityEditor.StandardEvents">
