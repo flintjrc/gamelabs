@@ -141,19 +141,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &122828709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 122828705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01016c34a6f93bb4ab385f7d1976d39c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BoxObject: {fileID: 155395278}
-  NameOfInputAttack: Fire1
 --- !u!1 &141351836 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1337956163056606, guid: 513a08669601e7e4a8e38fcaf714c18a,
@@ -223,6 +210,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1000011799270622, guid: 23d2f61651b26c24d999b508a4457b7e,
     type: 2}
   m_PrefabInternal: {fileID: 1487645093}
+--- !u!114 &155395276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 155395274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01016c34a6f93bb4ab385f7d1976d39c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NameOfInputAttack: Fire1
 --- !u!65 &155395278
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -581,7 +580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a4c757ee6365a141bbeb185093135ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnnemyHealth: 5
+  EnnemyHealth: 4
   DamageReceived: 1
 --- !u!1 &534669902
 GameObject:
