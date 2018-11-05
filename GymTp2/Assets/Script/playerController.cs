@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +17,7 @@ public class playerController : MonoBehaviour {
 	Rigidbody playerRigibody;
 
 	// Use this for initialization
-	void Awake () {
+	private void Awake () {
 		playerRigibody = GetComponent<Rigidbody>();
 		playerRigibody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
 	}
