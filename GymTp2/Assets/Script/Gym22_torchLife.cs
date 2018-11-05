@@ -40,7 +40,7 @@ public class Gym22_torchLife : MonoBehaviour {
 		}
 	}
 
-	void addFuel(float fuelAdded){
+	public void addFuel(float fuelAdded){
 		torchFuel=Mathf.Max(torchFuel+fuelAdded, torchMaxLifetime);
 		fuelBar.value = ((torchFuel/torchMaxLifetime) * 100);
 	}
