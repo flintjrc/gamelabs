@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Gym11_torch : MonoBehaviour {
-	[SerializeField] bool torchIsLit = true;
+	bool torchIsLit = true;
 	SpriteRenderer[] lChildRenderers;
 
 	void Start(){
