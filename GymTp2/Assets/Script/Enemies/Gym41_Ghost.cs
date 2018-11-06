@@ -7,6 +7,9 @@ public class Gym41_Ghost : MonoBehaviour {
     //Spirit Sprite
     private SpriteRenderer[] GhostSprite;
 
+    //Freeze time
+    [SerializeField] private float FreezeTime = 3.0f;
+
     //SpiritBody
     private Rigidbody GhostBody;
 
@@ -107,8 +110,8 @@ public class Gym41_Ghost : MonoBehaviour {
             SpriteParts.color = FlashedColor;
         }
 
-        //We wait for 3s
-        yield return new WaitForSeconds(3.0f);
+        //We wait for [T] seconds
+        yield return new WaitForSeconds(FreezeTime);
 
         //Ennemy is open to attack
         isFlashed = false;
