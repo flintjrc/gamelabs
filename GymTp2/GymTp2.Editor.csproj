@@ -349,6 +349,8 @@
     <Compile Include="Packages\com.unity.standardevents\Editor\Importer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\2DGamekit\Utilities\Shaders\NormalMappedTile.shader" />
+    <None Include="Assets\2DGamekit\Utilities\Shaders\Particle Standard Unlit.shader" />
     <None Include="Assets\Medieval Sword\read me.txt" />
     <None Include="Assets\Models\Key\readME keys.txt" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />

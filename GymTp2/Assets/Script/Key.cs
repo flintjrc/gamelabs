@@ -7,7 +7,7 @@ public class Key : MonoBehaviour, IInventoryItem
 
     public string Name
     {
-        get { return "Key"; }
+        get { return _Name; }
     }
 
     public Sprite Image
@@ -22,4 +22,6 @@ public class Key : MonoBehaviour, IInventoryItem
     }
 
     public Sprite _Image = null;
+
+    public string _Name = "Key";
 }
