@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\AnimationManager.cs" />
+    <Compile Include="Assets\Script\Camera.cs" />
     <Compile Include="Assets\Script\Enemies\Gym41_Ghost.cs" />
     <Compile Include="Assets\Script\Enemies\Scorpion\Gym12_Enemy.cs" />
     <Compile Include="Assets\Script\Gym11_torch.cs" />
@@ -71,8 +72,18 @@
     <Compile Include="Assets\Script\Gym21_heal.cs" />
     <Compile Include="Assets\Script\Gym21_hurt.cs" />
     <Compile Include="Assets\Script\Gym21_Player.cs" />
+    <Compile Include="Assets\Script\Gym22_flask.cs" />
+    <Compile Include="Assets\Script\Gym22_torchLife.cs" />
+    <Compile Include="Assets\Script\Gym32_ButtonAction.cs" />
+    <Compile Include="Assets\Script\Gym32_OpenGate.cs" />
+    <Compile Include="Assets\Script\Gym34_CollisionHandler.cs" />
     <Compile Include="Assets\Script\Gym41_CameraAttack.cs" />
+    <Compile Include="Assets\Script\HUDInventory.cs" />
+    <Compile Include="Assets\Script\Inventory.cs" />
+    <Compile Include="Assets\Script\InventoryEventArgs.cs" />
+    <Compile Include="Assets\Script\Key.cs" />
     <Compile Include="Assets\Script\playerController.cs" />
+    <None Include="Assets\Models\Key\readME keys.txt" />
     <None Include="Assets\Medieval Sword\read me.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Université/7 - A2018/LOG4715/Travaux pratiques/gamelabs/GymTp2/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
@@ -268,6 +279,7 @@
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
       <HintPath>C:/Université/7 - A2018/LOG4715/Travaux pratiques/gamelabs/GymTp2/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+      <HintPath>C:/Users/dragonlysa18/Documents/FISE3 Poly/Conception de jeux vidéos/gamelabs/GymTp2/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

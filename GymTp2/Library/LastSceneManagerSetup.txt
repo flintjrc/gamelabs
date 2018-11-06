@@ -1,4 +1,5 @@
 sceneSetups:
 - path: Assets/Scenes/Gym_13.unity
+- path: Assets/Scenes/Gym_33.unity
   isLoaded: 1
   isActive: 1
