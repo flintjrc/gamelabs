@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gym31_lever : MonoBehaviour {
 
 [SerializeField] bool pulled = false;
+[SerializeField] float timeToReset = 10f;
 Gym31_door door;
 
 void Start(){
@@ -12,8 +13,9 @@ void Start(){
 
 }
 void OnTriggerStay(Collider collider){
-	if(collider.CompareTag("Player") && Input.GetKeyDown(KeyCode.E)){
+	if(collider.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) && !pulled){
 		toggleLever();
+		StartCoroutine(timedLever());
 	}
 	
 }
@@ -27,4 +29,8 @@ void toggleLever(){
 
 }
 
+IEnumerator timedLever(){
+	yield return new WaitForSeconds(timeToReset);
+	toggleLever();
+}
 }
