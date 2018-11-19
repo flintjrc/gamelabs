@@ -5,40 +5,68 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour {
 	bool facingRight = true;
-	[SerializeField] float maxSpeed = 10f;	
-	[SerializeField] float jumpForce= 300f;
-	[SerializeField] float fallForce= 10f;
+    [SerializeField] float maxSpeed = 10f;              // The fastest the player can travel in the x axis.
+    [SerializeField] float minAirJumpForce = 400f;      // The minimum force used for regular jumps
+    [SerializeField] float jumpForce = 400f;                   // Current Amount of force added when the player jumps.	
+    [SerializeField] float maxJumpForce = 1000f;        // The max amount of force when doing  a charged jump
 
-	[SerializeField] bool grounded= false;
+    [SerializeField] bool grounded= false;
 
-	LayerMask WhatisGround;
+    [SerializeField] bool charged = false;              //Check if we use a charged jump
+    [SerializeField] LayerMask whatIsGround;            // A mask determining what is ground to the character
 
-	[SerializeField] bool fallForceAdded = false;
+    [SerializeField] int maxJump = 2;                   //Reference to the player's max number of air jumps
+    [SerializeField] int nAirJump;						//Number of air jumps left
+
+    [SerializeField] bool fallForceAdded = false;
 	Rigidbody playerRigibody;
+    [SerializeField] private float fallForce = 10f;    //Force added when Ringo fall
 
 	// Use this for initialization
 	private void Awake () {
+
 		playerRigibody = GetComponent<Rigidbody>();
 		playerRigibody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-	#if CROSS_PLATFORM_INPUT
+
+
+    // Update is called once per frame
+    void Update () {
+#if CROSS_PLATFORM_INPUT
         if (CrossPlatformInput.GetButtonDown("Jump")) playerJump();
 		float h = CrossPlatformInput.GetAxis("Horizontal");
-	#else
-		if (Input.GetButtonDown("Jump")) playerJump();
+#else
+        if (Input.GetButtonDown("Jump"))
+        {
+            playerJump();
+        }
 		float h = Input.GetAxis("Horizontal");
-	#endif
-	playerMove(h);
+
+#endif
+        charged = Input.GetKey(KeyCode.LeftControl);
+        playerMove(h);
 	}
 
-	void playerJump(){
-		playerRigibody.AddForce(new Vector2(0f, jumpForce));
-		fallForceAdded = false;
-	}
+	void playerJump()
+    {
 
+        //Try to perform a regular jump.
+		if ((nAirJump > 0 || grounded) && !charged)
+        {
+            // If we're in the air, we first reset the vertical velocity before adding a new force, so that each jump feels consistent
+            if (!grounded) {
+                playerRigibody.velocity = new Vector2(playerRigibody.velocity.x, 0);
+            }
+
+            // Add a vertical force to the player.
+            playerRigibody.AddForce(new Vector2(0f, jumpForce));
+            nAirJump = nAirJump - 1;
+            jumpForce = minAirJumpForce;
+            grounded = false;
+        }
+
+
+	}
 
 	void playerMove( float move){
 			// Move the character
@@ -54,9 +82,47 @@ public class playerController : MonoBehaviour {
 				Flip();
 			// Make the character falls a bit faster to prevent "floaty" jump
 			 if(playerRigibody.velocity.y <0 && !fallForceAdded) playerRigibody.AddForce(new Vector2(0f, -fallForce));
-	}
 
-	void Flip ()
+            //If the player touches the ground for a certain time, reset the number of available jumps
+            if (grounded && !(nAirJump == maxJump))
+            {
+                nAirJump = maxJump;
+                jumpForce = minAirJumpForce;
+            }
+
+           //If the player press jump, then accumulate energy
+            if (Input.GetButton("Jump") && jumpForce < maxJumpForce && charged && grounded)
+            {
+                jumpForce += 10.0f;
+            }
+
+            //If the player has accumulated energy and release jump or crouch button, then jump
+            if (jumpForce > minAirJumpForce && (!Input.GetKey(KeyCode.LeftControl) || !Input.GetButton("Jump")))
+            {
+                playerRigibody.AddForce(new Vector2(0f, jumpForce));
+                nAirJump = nAirJump - 1;
+                jumpForce = minAirJumpForce;
+                grounded = false;
+            }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        //If we have the same mask between the ground and the collider, then we are grounded.
+        if ((whatIsGround.value & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer)
+        {
+            grounded = true;
+        }
+
+
+    }
+
+    public bool GetGrounded()
+    {
+        return grounded;
+    }
+
+    void Flip ()
 	{
 		// Switch the way the player is labelled as facing.
 		facingRight = !facingRight;

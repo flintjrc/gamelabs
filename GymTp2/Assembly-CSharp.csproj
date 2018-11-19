@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Script\AnimationManager.cs" />
     <Compile Include="Assets\Script\Camera.cs" />
+    <Compile Include="Assets\Script\Camera3DManagement.cs" />
     <Compile Include="Assets\Script\Enemies\Gym41_Ghost.cs" />
     <Compile Include="Assets\Script\Enemies\Scorpion\Gym12_Enemy.cs" />
     <Compile Include="Assets\Script\Gym11_torch.cs" />
