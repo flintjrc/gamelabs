@@ -1,0 +1,11 @@
+megagym:
+-Offset de la torhce allumée ou non avec l'affichage
+-L'appareil photo tape les ennemis et récupère les objets de l'inventaire
+-Le joueur disaprait totalement avec la torche éteinte
+-La porte a clé s'ouvre pas (Problème d'import?)
+-La lumière de la torche disparait aps forcément avec la torche
+-le dessous de la joli porte est infranchissable
+-quand on saisit le cube, on ne peut plus attaquer (logique mais pourquoi ca fait ça?)
+
+todo: combiner scripts de torches, épées, appareil photo, en un script nommé itemManager
+fixer les bugs
