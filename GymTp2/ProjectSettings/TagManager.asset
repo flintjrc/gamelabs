@@ -7,6 +7,8 @@ TagManager:
   - healthBar
   - cube
   - Door
+  - Button
+  - cameraFlash
   layers:
   - Default
   - TransparentFX

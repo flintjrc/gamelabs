@@ -14,7 +14,7 @@ public class Gym41_Ghost : MonoBehaviour {
     private Rigidbody GhostBody;
 
     //True if the ennemy is flashed
-    private bool isFlashed = false;
+     public bool isFlashed = false;
 
     //Color of the immobile state when ghost is flashed
     private Color FlashedColor = Color.blue;
@@ -90,7 +90,7 @@ public class Gym41_Ghost : MonoBehaviour {
     //Moreover, the ennemy must have a collider which is not a trigger, otherwise, the hero can just trigger the ghost to immobilize him.
     private void OnTriggerEnter(Collider collision)
     {
-        if (Input.GetButtonDown("Fire1") && !isFlashed)
+        if (!isFlashed && collision.GetComponent<Collider>().CompareTag("cameraFlash"))
         {
 
             //We need to use startCoroutine to call the function "FlashGhost" because we need to measure the time of the immobilisation state

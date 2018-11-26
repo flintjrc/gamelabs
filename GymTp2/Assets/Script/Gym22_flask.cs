@@ -5,10 +5,10 @@ using UnityEngine;
 public class Gym22_flask : MonoBehaviour {
 
 [SerializeField] float fuel = 20f;
-Gym22_torchLife player;
+playerBehaviour player;
 
 void Start(){
-	player = GameObject.FindGameObjectWithTag("Player").GetComponent<Gym22_torchLife>();
+	player = GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>();
 
 }
 void OnTriggerEnter(Collider collider){

@@ -30,7 +30,7 @@ public class Gym21_Player : MonoBehaviour {
 			immunity = true;
 			healthbar.value = ((float)hitpoints/(float)maxHealth) * 100;
 		};
-		if (hitpoints == 0) UnityEngine.SceneManagement.SceneManager.LoadScene("Gym_21");
+		if (hitpoints == 0) UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().ToString());
 	}
 
 	public void heal(int healed){

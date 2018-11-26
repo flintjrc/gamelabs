@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Gym13_PlayerPush : MonoBehaviour {
 
-    public float distance = 1f;
-    public LayerMask boxMask;
+
     public KeyCode grabInput;
     public KeyCode releaseInput;
 
-    GameObject box;
     bool isAttached = false;
     Collider attachedCollider = null;
 

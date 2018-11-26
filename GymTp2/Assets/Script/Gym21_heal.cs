@@ -5,9 +5,9 @@ using UnityEngine;
 public class Gym21_heal : MonoBehaviour {
 
 [SerializeField] int heal = 1;
-Gym21_Player player;
+playerBehaviour player;
 void Start(){
-	player = GameObject.FindGameObjectWithTag("Player").GetComponent<Gym21_Player>();
+	player = GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>();
 
 }
 void OnCollisionEnter(Collision col){

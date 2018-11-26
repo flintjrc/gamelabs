@@ -22,10 +22,13 @@ public class playerController : MonoBehaviour {
 	Rigidbody playerRigibody;
     [SerializeField] private float fallForce = 10f;    //Force added when Ringo fall
 
+    [SerializeField] playerBehaviour behaviour;
+
 	// Use this for initialization
 	private void Awake () {
 
 		playerRigibody = GetComponent<Rigidbody>();
+        behaviour = GetComponent<playerBehaviour>();
 		playerRigibody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
 	}
 
@@ -44,6 +47,8 @@ public class playerController : MonoBehaviour {
 
 #endif
         charged = Input.GetKey(KeyCode.LeftControl);
+        if(Input.GetButtonDown("Fire1")) behaviour.useItem();
+        if(Input.GetAxis("Mouse ScrollWheel")!=0) behaviour.switchItem((int) Mathf.Sign(Input.GetAxis("Mouse ScrollWheel")));
         playerMove(h);
 	}
 
