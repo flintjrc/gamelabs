@@ -9,6 +9,7 @@ TagManager:
   - Door
   - Button
   - cameraFlash
+  - sword
   layers:
   - Default
   - TransparentFX

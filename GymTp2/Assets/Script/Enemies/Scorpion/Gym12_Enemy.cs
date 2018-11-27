@@ -45,7 +45,7 @@ public class Gym12_Enemy : MonoBehaviour {
     //Moreover, the ennemy must have a collider which is not a trigger, otherwise, the hero can just trigger the ennemy to kill him.
     private void OnTriggerEnter(Collider collision)
     {
-        if (Input.GetButtonDown("Fire1") && NotInvincible)
+        if (collision.GetComponent<Collider>().CompareTag("sword") && NotInvincible)
         {
             DeductPoints(DamageReceived);
 

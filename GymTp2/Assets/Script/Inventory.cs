@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private const int slots = 6;
-    private List<IInventoryItem> menuItems = new List<IInventoryItem>();
+    public const int slots = 6;
+    [SerializeField] public List<IInventoryItem> menuItems = new List<IInventoryItem>();
 
     public event EventHandler<InventoryEventArgs> ItemAdded;
     public event EventHandler<InventoryEventArgs> ItemRemoved;

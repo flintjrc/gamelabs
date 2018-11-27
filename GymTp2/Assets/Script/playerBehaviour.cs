@@ -5,9 +5,6 @@ using UnityEngine;
 public class playerBehaviour : MonoBehaviour {
 
 	//constants for determining which item is active
-	const int TORCH =1;
-	const int CAMERA =2;
-	const int SWORD =3;
 	[SerializeField] int currentItem;
 
 	[SerializeField] Inventory inventory;
@@ -19,7 +16,6 @@ public class playerBehaviour : MonoBehaviour {
     [SerializeField] private CapsuleCollider FlashCollider;
     [SerializeField] private Light SpotLight;
     [SerializeField] private Light PositionLight;
-    [SerializeField] private string NameOfInputAttack = "Fire1";
 
 	//attribs for sword attack
 	[SerializeField] private BoxCollider BoxObject;
@@ -49,6 +45,7 @@ public class playerBehaviour : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		currentItem = 0;
 		lChildRenderers=gameObject.GetComponentsInChildren<SpriteRenderer>();
 		inventory = gameObject.GetComponent<Inventory>();
 		foreach ( MeshRenderer lRenderer in gameObject.GetComponentsInChildren<MeshRenderer>()){
@@ -60,6 +57,9 @@ public class playerBehaviour : MonoBehaviour {
         PositionLight.enabled = false;
 		healthbar.value = ((float)hitpoints/(float)maxHealth) * 100;
 		fuelBar.value = ((torchFuel/torchMaxLifetime) * 100);
+		foreach ( Light light in gameObject.GetComponentsInChildren<Light>()){
+				if(light.gameObject.name =="Torch Light") torchLight= light;
+		}
 	}
 	
 	// Update is called once per frame
@@ -76,17 +76,27 @@ public class playerBehaviour : MonoBehaviour {
 		if(immunity){
 			immunityTimer -= Time.deltaTime;
 			bool blink = Time.time % 0.2 <= 0.1f;
-         	foreach ( SpriteRenderer lRenderer in lChildRenderers) {lRenderer.enabled=blink;}
+         	foreach ( SpriteRenderer lRenderer in lChildRenderers) {
+				 if(lRenderer.gameObject.name !="Torch" && lRenderer.gameObject.name != "Picture Camera"){
+					 lRenderer.enabled=blink;
+					 }
+				 }
 			if (immunityTimer<0){
 				immunity = false;
-				foreach ( SpriteRenderer lRenderer in lChildRenderers){lRenderer.enabled=true;}
+				foreach ( SpriteRenderer lRenderer in lChildRenderers) {
+				 if(lRenderer.gameObject.name !="Torch" && lRenderer.gameObject.name != "Picture Camera"){
+					 lRenderer.enabled=true;
+					 }
+				 }
 			}
 		}
 
-		if(currentItem==TORCH){
-			torchFuel = Mathf.Min(torchFuel, torchMaxLifetime);
-			torchFuel -= burnSpeed*Time.deltaTime;
-			fuelBar.value = ((torchFuel/torchMaxLifetime) * 100);
+		if(inventory.menuItems.Count != 0)
+		{	if(inventory.menuItems[currentItem].Name=="Torch"){
+				torchFuel = Mathf.Min(torchFuel, torchMaxLifetime);
+				torchFuel -= burnSpeed*Time.deltaTime;
+				fuelBar.value = ((torchFuel/torchMaxLifetime) * 100);
+			}
 		}
 		if(torchFuel<=0){
 			switchItem(1);
@@ -95,11 +105,11 @@ public class playerBehaviour : MonoBehaviour {
 	}
 
 	public void useItem(){
-		switch(currentItem){
-			case CAMERA:
+		switch(inventory.menuItems[currentItem].Name){
+			case "Camera":
 				StartCoroutine(cameraAttack());
 				break;
-			case SWORD:
+			case "Sword":
 				StartCoroutine(swordAttack());
 				break;
 			default:
@@ -111,44 +121,29 @@ public class playerBehaviour : MonoBehaviour {
 	public void switchItem(int sign){
 		
 		currentItem += sign;
-		currentItem %= 4;
-		if(currentItem<0) currentItem = 3;
-		switch(currentItem){
-			case TORCH:
-				if(inventory.HasItem("Torch") && torchFuel>0){
+		currentItem %= inventory.menuItems.Count;
+		if(currentItem<0) currentItem = inventory.menuItems.Count-1;
+		foreach ( SpriteRenderer lRenderer in lChildRenderers) {
+			if(lRenderer.gameObject.name =="Torch" || lRenderer.gameObject.name == "Picture Camera"){ lRenderer.enabled= false;}
+		}
+		swordRenderer.enabled = false;
+		torchLight.enabled= false;
+		switch(inventory.menuItems[currentItem].Name){
+			case "Torch":
 				foreach ( SpriteRenderer lRenderer in lChildRenderers) {
-					if(lRenderer.gameObject.name =="Picture Camera"){ lRenderer.enabled= false;}
-					else if(lRenderer.gameObject.name == "Torch"){lRenderer.enabled = true;}
+					if(lRenderer.gameObject.name == "Torch"){lRenderer.enabled = true;}
 				}
-				swordRenderer.enabled = false;
-				}
-				else switchItem(sign);
+				torchLight.enabled = true;
 				break;
-			case CAMERA:
-				if(inventory.HasItem("Camera")){
+			case "Camera":
 				foreach ( SpriteRenderer lRenderer in lChildRenderers) {
-					if(lRenderer.gameObject.name =="Torch"){ lRenderer.enabled= false;}
-					else if(lRenderer.gameObject.name == "Picture Camera"){lRenderer.enabled = true;}
+					if(lRenderer.gameObject.name == "Picture Camera"){lRenderer.enabled = true;}
 				}
-				swordRenderer.enabled = false;
-				}
-				else switchItem(sign);
 				break;
-			case SWORD:
-				if(inventory.HasItem("Sword")){
-				foreach ( SpriteRenderer lRenderer in lChildRenderers) {
-					if(lRenderer.gameObject.name =="Torch" || lRenderer.gameObject.name == "Picture Camera"){ lRenderer.enabled= false;}
-				}
+			case "Sword":
 				swordRenderer.enabled = true;
-				}
-				else switchItem(sign);
 				break;
 			default:
-
-				foreach ( SpriteRenderer lRenderer in lChildRenderers) {
-					if(lRenderer.gameObject.name =="Torch" || lRenderer.gameObject.name == "Picture Camera"){ lRenderer.enabled= false;}
-				}
-				swordRenderer.enabled = false;
 				break;
 		}
 	}
@@ -218,6 +213,7 @@ public class playerBehaviour : MonoBehaviour {
 		torchFuel=Mathf.Min(torchFuel+fuelAdded, torchMaxLifetime);
 		fuelBar.value = ((torchFuel/torchMaxLifetime) * 100);
 	}
+
 
 	
 }
