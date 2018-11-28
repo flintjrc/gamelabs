@@ -62,10 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\AnimationManager.cs" />
+    <Compile Include="Assets\Script\ButtonWithBlock.cs" />
     <Compile Include="Assets\Script\Camera.cs" />
     <Compile Include="Assets\Script\Camera3DManagement.cs" />
     <Compile Include="Assets\Script\Enemies\Gym41_Ghost.cs" />
     <Compile Include="Assets\Script\Enemies\Scorpion\Gym12_Enemy.cs" />
+    <Compile Include="Assets\Script\fuelPopPickUp.cs" />
     <Compile Include="Assets\Script\Gym11_torch.cs" />
     <Compile Include="Assets\Script\Gym12_ObjectAttack.cs" />
     <Compile Include="Assets\Script\Gym12_ObjectHold.cs" />
@@ -83,11 +85,15 @@
     <Compile Include="Assets\Script\Gym33_DoorController.cs" />
     <Compile Include="Assets\Script\Gym34_CollisionHandler.cs" />
     <Compile Include="Assets\Script\Gym41_CameraAttack.cs" />
+    <Compile Include="Assets\Script\healthPopPickUp.cs" />
     <Compile Include="Assets\Script\HUDInventory.cs" />
     <Compile Include="Assets\Script\Inventory.cs" />
     <Compile Include="Assets\Script\InventoryEventArgs.cs" />
     <Compile Include="Assets\Script\Key.cs" />
+    <Compile Include="Assets\Script\playerBehaviour.cs" />
     <Compile Include="Assets\Script\playerController.cs" />
+    <Compile Include="Assets\Script\swordPickUp.cs" />
+    <Compile Include="Assets\Script\torchPickUp.cs" />
     <None Include="Assets\2DGamekit\Utilities\Shaders\Particle Standard Unlit.shader" />
     <None Include="Assets\Models\Key\readME keys.txt" />
     <None Include="Assets\2DGamekit\Utilities\Shaders\NormalMappedTile.shader" />
