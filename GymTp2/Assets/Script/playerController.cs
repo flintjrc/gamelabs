@@ -25,9 +25,12 @@ public class playerController : MonoBehaviour {
     [SerializeField] playerBehaviour behaviour;
     [SerializeField] Inventory inventory;
 
+    [SerializeField] private bool shoesTaken;
+
 	// Use this for initialization
 	private void Awake () {
 
+        shoesTaken = false;
 		playerRigibody = GetComponent<Rigidbody>();
         behaviour = GetComponent<playerBehaviour>();
         inventory = GetComponent<Inventory>();
@@ -37,6 +40,7 @@ public class playerController : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+
 #if CROSS_PLATFORM_INPUT
         if (CrossPlatformInput.GetButtonDown("Jump")) playerJump();
 		float h = CrossPlatformInput.GetAxis("Horizontal");
@@ -98,7 +102,7 @@ public class playerController : MonoBehaviour {
             }
 
            //If the player press jump, then accumulate energy
-            if (Input.GetButton("Jump") && jumpForce < maxJumpForce && charged && grounded)
+            if (Input.GetButton("Jump") && jumpForce < maxJumpForce && charged && grounded && shoesTaken)
             {
                 jumpForce += 10.0f;
             }
@@ -139,4 +143,9 @@ public class playerController : MonoBehaviour {
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
+    public void TakeShoes()
+    {
+        shoesTaken = true;
+    }
 }
