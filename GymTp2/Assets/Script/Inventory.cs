@@ -37,6 +37,7 @@ public class Inventory : MonoBehaviour
         if (ItemRemoved != null && item != null)
         {
             ItemRemoved(this, new InventoryEventArgs(item));
+            menuItems.Remove(item);
         }
     }
 

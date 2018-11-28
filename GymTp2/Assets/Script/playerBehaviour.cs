@@ -112,6 +112,16 @@ public class playerBehaviour : MonoBehaviour {
 			case "Sword":
 				StartCoroutine(swordAttack());
 				break;
+			case "fuelPop":
+				addFuel(torchMaxLifetime);
+				inventory.RemoveItem(inventory.menuItems[currentItem]);
+				switchItem(-1);
+				break;
+			case "hpPop":
+				heal(maxHealth);
+				inventory.RemoveItem(inventory.menuItems[currentItem]);
+				switchItem(-1);
+				break;
 			default:
 				break;
 		}
@@ -124,7 +134,7 @@ public class playerBehaviour : MonoBehaviour {
 		currentItem %= inventory.menuItems.Count;
 		if(currentItem<0) currentItem = inventory.menuItems.Count-1;
 		foreach ( SpriteRenderer lRenderer in lChildRenderers) {
-			if(lRenderer.gameObject.name =="Torch" || lRenderer.gameObject.name == "Picture Camera"){ lRenderer.enabled= false;}
+			if(lRenderer.gameObject.name =="Torch" || lRenderer.gameObject.name == "Picture Camera"|| lRenderer.gameObject.name == "fuelFlask"|| lRenderer.gameObject.name == "hpFlask"){ lRenderer.enabled= false;}
 		}
 		swordRenderer.enabled = false;
 		torchLight.enabled= false;
@@ -142,6 +152,16 @@ public class playerBehaviour : MonoBehaviour {
 				break;
 			case "Sword":
 				swordRenderer.enabled = true;
+				break;
+			case "fuelPop":
+				foreach ( SpriteRenderer lRenderer in lChildRenderers) {
+					if(lRenderer.gameObject.name == "fuelFlask"){lRenderer.enabled = true;}
+				}
+				break;
+			case "hpPop":
+				foreach ( SpriteRenderer lRenderer in lChildRenderers) {
+					if(lRenderer.gameObject.name == "hpFlask"){lRenderer.enabled = true;}
+				}
 				break;
 			default:
 				break;
@@ -161,7 +181,7 @@ public class playerBehaviour : MonoBehaviour {
 			immunity = true;
 			healthbar.value = ((float)hitpoints/(float)maxHealth) * 100;
 		};
-		if (hitpoints == 0) UnityEngine.SceneManagement.SceneManager.LoadScene("MegaGym");
+		if (hitpoints <= 0) UnityEngine.SceneManagement.SceneManager.LoadScene("MegaGym");
 	}
 
 	public void heal(int healed){
