@@ -77,14 +77,14 @@ public class playerBehaviour : MonoBehaviour {
 			immunityTimer -= Time.deltaTime;
 			bool blink = Time.time % 0.2 <= 0.1f;
          	foreach ( SpriteRenderer lRenderer in lChildRenderers) {
-				 if(lRenderer.gameObject.name !="Torch" && lRenderer.gameObject.name != "Picture Camera"){
+				 if(lRenderer.gameObject.name !="Torch" && lRenderer.gameObject.name != "Picture Camera" && lRenderer.gameObject.name != "fuelFlask"&& lRenderer.gameObject.name != "hpFlask"){
 					 lRenderer.enabled=blink;
 					 }
 				 }
 			if (immunityTimer<0){
 				immunity = false;
 				foreach ( SpriteRenderer lRenderer in lChildRenderers) {
-				 if(lRenderer.gameObject.name !="Torch" && lRenderer.gameObject.name != "Picture Camera"){
+				 if(lRenderer.gameObject.name !="Torch" && lRenderer.gameObject.name != "Picture Camera" && lRenderer.gameObject.name != "fuelFlask"&& lRenderer.gameObject.name != "hpFlask"){
 					 lRenderer.enabled=true;
 					 }
 				 }
@@ -98,7 +98,7 @@ public class playerBehaviour : MonoBehaviour {
 				fuelBar.value = ((torchFuel/torchMaxLifetime) * 100);
 			}
 		}
-		if(torchFuel<=0){
+		if(torchFuel<=0 && inventory.menuItems[currentItem].Name=="Torch"){
 			switchItem(1);
 		}
 		
