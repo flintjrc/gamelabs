@@ -65,6 +65,8 @@
     <Compile Include="Assets\Script\ButtonWithBlock.cs" />
     <Compile Include="Assets\Script\Camera.cs" />
     <Compile Include="Assets\Script\Camera3DManagement.cs" />
+    <Compile Include="Assets\Script\DoorWithLever.cs" />
+    <Compile Include="Assets\Script\Enemies\ghostBehaviour.cs" />
     <Compile Include="Assets\Script\Enemies\Gym41_Ghost.cs" />
     <Compile Include="Assets\Script\Enemies\Scorpion\Gym12_Enemy.cs" />
     <Compile Include="Assets\Script\fuelPopPickUp.cs" />
@@ -90,8 +92,10 @@
     <Compile Include="Assets\Script\Inventory.cs" />
     <Compile Include="Assets\Script\InventoryEventArgs.cs" />
     <Compile Include="Assets\Script\Key.cs" />
+    <Compile Include="Assets\Script\Lever.cs" />
     <Compile Include="Assets\Script\playerBehaviour.cs" />
     <Compile Include="Assets\Script\playerController.cs" />
+    <Compile Include="Assets\Script\shoesPickUp.cs" />
     <Compile Include="Assets\Script\swordPickUp.cs" />
     <Compile Include="Assets\Script\torchPickUp.cs" />
     <None Include="Assets\2DGamekit\Utilities\Shaders\Particle Standard Unlit.shader" />
