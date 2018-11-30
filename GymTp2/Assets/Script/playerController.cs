@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class playerController : MonoBehaviour {
@@ -27,10 +28,21 @@ public class playerController : MonoBehaviour {
 
     [SerializeField] private bool shoesTaken;
 
+    string currentScene;
+
 	// Use this for initialization
 	private void Awake () {
 
-        shoesTaken = false;
+        currentScene = SceneManager.GetActiveScene().name.ToString();
+
+        if (currentScene == "Level_2")
+        {
+            shoesTaken = true;
+        }
+        else
+        {
+            shoesTaken = false;
+        }
 		playerRigibody = GetComponent<Rigidbody>();
         behaviour = GetComponent<playerBehaviour>();
         inventory = GetComponent<Inventory>();

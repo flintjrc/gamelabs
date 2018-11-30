@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Gym32_OpenGate : MonoBehaviour {
 
-    //The Gate
-    private Transform GateTransform;
-
     //The buttons which have the tag called in the ButtonTag component
     private GameObject[] Buttons;
 
@@ -19,12 +16,6 @@ public class Gym32_OpenGate : MonoBehaviour {
     //Number Of buttons which are associated to this gate
     [SerializeField] private int NumberGateButtons = 2;
 
-    //Y translation Gate when the gate is opened
-    [SerializeField] private float GateTranslationY = 0.5f;
-
-    //X translation Gate when the gate is opened
-    [SerializeField] private float GateTranslationX = 2.0f;
-
     //Number of pushed button
     private int NumberactivatedButton = 0;
 
@@ -33,8 +24,6 @@ public class Gym32_OpenGate : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-        GateTransform = GetComponent<Transform>();
 
         Buttons = GameObject.FindGameObjectsWithTag(ButtonTag);
 
@@ -86,8 +75,7 @@ public class Gym32_OpenGate : MonoBehaviour {
         if (NumberactivatedButton == NumberGateButtons && !OpenedDoor)
         {
             //We translate the gate
-            GateTransform.Translate(0.0f, GateTranslationY, 0.0f);
-            GateTransform.Translate(GateTranslationX, 0.0f, 0.0f);
+            GetComponent<Animator>().Play("DoorOpening");
             OpenedDoor = true;
         }
 

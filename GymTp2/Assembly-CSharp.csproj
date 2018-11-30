@@ -65,6 +65,8 @@
     <Compile Include="Assets\Script\ButtonWithBlock.cs" />
     <Compile Include="Assets\Script\Camera.cs" />
     <Compile Include="Assets\Script\Camera3DManagement.cs" />
+    <Compile Include="Assets\Script\DoorWithLever.cs" />
+    <Compile Include="Assets\Script\Enemies\ghostBehaviour.cs" />
     <Compile Include="Assets\Script\Enemies\Gym41_Ghost.cs" />
     <Compile Include="Assets\Script\Enemies\Scorpion\Gym12_Enemy.cs" />
     <Compile Include="Assets\Script\fuelPopPickUp.cs" />
@@ -90,8 +92,10 @@
     <Compile Include="Assets\Script\Inventory.cs" />
     <Compile Include="Assets\Script\InventoryEventArgs.cs" />
     <Compile Include="Assets\Script\Key.cs" />
+    <Compile Include="Assets\Script\Lever.cs" />
     <Compile Include="Assets\Script\playerBehaviour.cs" />
     <Compile Include="Assets\Script\playerController.cs" />
+    <Compile Include="Assets\Script\shoesPickUp.cs" />
     <Compile Include="Assets\Script\swordPickUp.cs" />
     <Compile Include="Assets\Script\torchPickUp.cs" />
     <None Include="Assets\2DGamekit\Utilities\Shaders\Particle Standard Unlit.shader" />
@@ -99,16 +103,16 @@
     <None Include="Assets\2DGamekit\Utilities\Shaders\NormalMappedTile.shader" />
     <None Include="Assets\Medieval Sword\read me.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/dragonlysa18/Documents/FISE3 Poly/Conception de jeux vidéos/gamelabs/GymTp2/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/dragonlysa18/Documents/FISE3 Poly/Conception de jeux vidéos/Labs sans github/GymTp2/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/dragonlysa18/Documents/FISE3 Poly/Conception de jeux vidéos/gamelabs/GymTp2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/dragonlysa18/Documents/FISE3 Poly/Conception de jeux vidéos/Labs sans github/GymTp2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/dragonlysa18/Documents/FISE3 Poly/Conception de jeux vidéos/gamelabs/GymTp2/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/dragonlysa18/Documents/FISE3 Poly/Conception de jeux vidéos/Labs sans github/GymTp2/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/dragonlysa18/Documents/FISE3 Poly/Conception de jeux vidéos/gamelabs/GymTp2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/dragonlysa18/Documents/FISE3 Poly/Conception de jeux vidéos/Labs sans github/GymTp2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -291,7 +295,7 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Unity.Locator.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
-      <HintPath>C:/Users/dragonlysa18/Documents/FISE3 Poly/Conception de jeux vidéos/gamelabs/GymTp2/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+      <HintPath>C:/Users/dragonlysa18/Documents/FISE3 Poly/Conception de jeux vidéos/Labs sans github/GymTp2/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
