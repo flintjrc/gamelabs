@@ -12,16 +12,21 @@ public class ghostBehaviour : MonoBehaviour {
 	[SerializeField] Vector3 playerPosition;
 	[SerializeField] bool chasing;
 	[SerializeField] private float speed = 2.0f;
+	[SerializeField] bool startPositionAsAnchor;
+	[SerializeField] Vector3 startPosition;
+	[SerializeField] int damage = 1;
 	private Rigidbody GhostBody;
     public bool isFlashed = false;
     private Color FlashedColor = Color.blue;
     private Color NormalColor = Color.white;
     private SpriteRenderer[] GhostSprite;
     [SerializeField] private float FreezeTime = 3.0f;
-	[SerializeField] int damage = 1;
+
+
 
 	void Start () {
-		anchorPoint = transform.position;
+		startPosition = transform.position;
+		if(startPositionAsAnchor) anchorPoint = transform.position;
 		playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
 		GhostBody = GetComponent<Rigidbody>();
 
@@ -51,13 +56,13 @@ public class ghostBehaviour : MonoBehaviour {
 	void ghostMove(){
 		if(chasing){
 			GhostBody.velocity = speed*Vector3.Normalize(playerPosition - gameObject.transform.position);
-			if(transform.localScale.x * (playerPosition.x - transform.position.x) <0){
+			if(transform.localScale.x * (playerPosition.x - transform.position.x) >0){
 				Flip();
 			}
 		}
-		else if(Vector3.Distance(anchorPoint,gameObject.transform.position)>0.1){
-			GhostBody.velocity = speed*Vector3.Normalize(anchorPoint - gameObject.transform.position);
-			if(transform.localScale.x * (anchorPoint.x - transform.position.x) <0){
+		else if(Vector3.Distance(startPosition,gameObject.transform.position)>0.1){
+			GhostBody.velocity = speed*Vector3.Normalize(startPosition - gameObject.transform.position);
+			if(transform.localScale.x * (startPosition.x - transform.position.x) >0){
 				Flip();
 			}
 		}
