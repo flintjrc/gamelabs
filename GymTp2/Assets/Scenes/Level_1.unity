@@ -6808,7 +6808,7 @@ GameObject:
   - component: {fileID: 531560494}
   - component: {fileID: 531560493}
   - component: {fileID: 531560492}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Block 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17201,7 +17201,7 @@ GameObject:
   - component: {fileID: 1901611937}
   - component: {fileID: 1901611936}
   - component: {fileID: 1901611935}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
