@@ -23065,6 +23065,11 @@ Prefab:
       propertyPath: m_Name
       value: tribeman (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114985432263814782, guid: ab82dc0b4f898ea45922715cd35f87c4,
+        type: 2}
+      propertyPath: EnnemyHealth
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab82dc0b4f898ea45922715cd35f87c4, type: 2}
   m_IsPrefabAsset: 0
@@ -24678,6 +24683,11 @@ Prefab:
     - target: {fileID: 4873127256717436, guid: ab82dc0b4f898ea45922715cd35f87c4, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114985432263814782, guid: ab82dc0b4f898ea45922715cd35f87c4,
+        type: 2}
+      propertyPath: EnnemyHealth
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab82dc0b4f898ea45922715cd35f87c4, type: 2}
@@ -31237,7 +31247,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1512138553}
   m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 43.2, y: 0.94344795, z: 0.8}
+  m_LocalPosition: {x: 43.2, y: 0.94344795, z: 0.48}
   m_LocalScale: {x: 6, y: 1, z: 19.53}
   m_Children: []
   m_Father: {fileID: 0}
