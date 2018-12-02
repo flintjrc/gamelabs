@@ -35,7 +35,7 @@ public class playerController : MonoBehaviour {
 
         currentScene = SceneManager.GetActiveScene().name.ToString();
 
-        if (currentScene == "Level_2")
+        if (currentScene == "Level_2" || currentScene == "Level_3")
         {
             shoesTaken = true;
         }
