@@ -40187,7 +40187,7 @@ GameObject:
   - component: {fileID: 1753858676}
   m_Layer: 31
   m_Name: DoorSprite
-  m_TagString: Door
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
