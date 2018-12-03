@@ -30,7 +30,7 @@ public class SaveComponents : MonoBehaviour {
 
         currentScene = SceneManager.GetActiveScene().name.ToString();
 
-        if(currentScene == "Level_2")
+        if(currentScene == "Level_2" || currentScene == "Level_3")
         {
            Behaviour = GameObject.FindGameObjectWithTag("Player").GetComponent<playerBehaviour>();
            inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();

@@ -24,7 +24,7 @@ public class MakeTransitionScene : MonoBehaviour {
             SceneManager.LoadScene(NextLevel);
             DontDestroyOnLoad(Saving);
             DontDestroyOnLoad(AudioSource);
-
+            Saving.GetComponent<SaveComponents>().saveState();
 
         }
     }
