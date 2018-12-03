@@ -349,8 +349,11 @@
     <Compile Include="Assets\Script\Key.cs" />
     <Compile Include="Assets\Script\Lever.cs" />
     <Compile Include="Assets\Script\LoadSceneOnClick.cs" />
+    <Compile Include="Assets\Script\MakeTransitionScene.cs" />
+    <Compile Include="Assets\Script\PauseMenu.cs" />
     <Compile Include="Assets\Script\playerBehaviour.cs" />
     <Compile Include="Assets\Script\playerController.cs" />
+    <Compile Include="Assets\Script\SaveComponents.cs" />
     <Compile Include="Assets\Script\shoesPickUp.cs" />
     <Compile Include="Assets\Script\swordPickUp.cs" />
     <Compile Include="Assets\Script\torchPickUp.cs" />
