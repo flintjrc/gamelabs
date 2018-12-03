@@ -23,7 +23,7 @@ public class SaveComponents : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	public void saveState () {
         PV = Behaviour.getHP();
         TorchFuel = Behaviour.getFuel();
         menuItems = inventory.GetItems();

@@ -20,6 +20,7 @@ public class MakeTransitionScene : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
+            Saving.GetComponent<SaveComponents>().saveState();
             SceneManager.LoadScene(NextLevel);
             DontDestroyOnLoad(Saving);
             DontDestroyOnLoad(AudioSource);

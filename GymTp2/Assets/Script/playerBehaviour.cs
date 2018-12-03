@@ -6,7 +6,7 @@ using UnityEngine;
 public class playerBehaviour : MonoBehaviour {
 
 	//constants for determining which item is active
-	[SerializeField] int currentItem;
+	[SerializeField] public int currentItem;
 
 	[SerializeField] Inventory inventory;
 
@@ -78,6 +78,11 @@ public class playerBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		if(currentItem>inventory.menuItems.Count){
+			currentItem %= inventory.menuItems.Count+1;
+			switchItem(0);
+		}
+
 		if (isAttached && Input.GetKeyDown(releaseInput))
         {            
             attachedCollider.GetComponent<FixedJoint>().connectedBody = null;
@@ -104,8 +109,8 @@ public class playerBehaviour : MonoBehaviour {
 			}
 		}
 
-		if(inventory.menuItems.Count != 0)
-		{	if(inventory.menuItems[currentItem].Name=="Torch"){
+		if(inventory.menuItems.Count != 0 && currentItem != 0 && currentItem<=inventory.menuItems.Count)
+		{	if(inventory.menuItems[currentItem-1].Name=="Torch"){
 				torchFuel = Mathf.Min(torchFuel, torchMaxLifetime);
 				torchFuel -= burnSpeed*Time.deltaTime;
 				fuelBar.value = ((torchFuel/torchMaxLifetime) * 100);
@@ -118,7 +123,7 @@ public class playerBehaviour : MonoBehaviour {
 	}
 
 	public void useItem(){
-		switch(inventory.menuItems[currentItem].Name){
+		switch(inventory.menuItems[currentItem-1].Name){
 			case "Camera":
 				StartCoroutine(cameraAttack());
 				break;
@@ -127,12 +132,12 @@ public class playerBehaviour : MonoBehaviour {
 				break;
 			case "fuelPop":
 				addFuel(torchMaxLifetime);
-				inventory.RemoveItem(inventory.menuItems[currentItem]);
+				inventory.RemoveItem(inventory.menuItems[currentItem-1]);
 				switchItem(-1);
 				break;
 			case "hpPop":
 				heal(maxHealth);
-				inventory.RemoveItem(inventory.menuItems[currentItem]);
+				inventory.RemoveItem(inventory.menuItems[currentItem-1]);
 				switchItem(-1);
 				break;
 			default:
@@ -144,14 +149,15 @@ public class playerBehaviour : MonoBehaviour {
 	public void switchItem(int sign){
 		
 		currentItem += sign;
-		currentItem %= inventory.menuItems.Count;
+		currentItem %= inventory.menuItems.Count+1;
 		if(currentItem<0) currentItem = inventory.menuItems.Count-1;
 		foreach ( SpriteRenderer lRenderer in lChildRenderers) {
 			if(lRenderer.gameObject.name =="Torch" || lRenderer.gameObject.name == "Picture Camera"|| lRenderer.gameObject.name == "fuelFlask"|| lRenderer.gameObject.name == "hpFlask"){ lRenderer.enabled= false;}
 		}
 		swordRenderer.enabled = false;
 		torchLight.enabled= false;
-		switch(inventory.menuItems[currentItem].Name){
+		if(currentItem != 0){
+		switch(inventory.menuItems[currentItem-1].Name){
 			case "Torch":
 				foreach ( SpriteRenderer lRenderer in lChildRenderers) {
 					if(lRenderer.gameObject.name == "Torch"){lRenderer.enabled = true;}
@@ -179,6 +185,7 @@ public class playerBehaviour : MonoBehaviour {
 			default:
 				break;
 		}
+		}
 	}
 
 	public int getHP(){
@@ -199,7 +206,7 @@ public class playerBehaviour : MonoBehaviour {
 			immunity = true;
 			healthbar.value = ((float)hitpoints/(float)maxHealth) * 100;
 		};
-		if (hitpoints <= 0) UnityEngine.SceneManagement.SceneManager.LoadScene("MegaGym");
+		//if (hitpoints <= 0) UnityEngine.SceneManagement.SceneManager.LoadScene("MegaGym");
 	}
 
 	public void heal(int healed){

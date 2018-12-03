@@ -65,7 +65,7 @@ public class playerController : MonoBehaviour {
 
 #endif
         charged = Input.GetKey(KeyCode.LeftControl);
-        if(Input.GetButtonDown("Fire1") && inventory.menuItems.Count != 0) behaviour.useItem();
+        if(Input.GetButtonDown("Fire1") && inventory.menuItems.Count != 0 && behaviour.currentItem != 0) behaviour.useItem();
         if(Input.GetAxis("Mouse ScrollWheel")!=0 && inventory.menuItems.Count != 0) behaviour.switchItem((int) Mathf.Sign(Input.GetAxis("Mouse ScrollWheel")));
         playerMove(h);
 	}
