@@ -352,6 +352,9 @@
     <None Include="Assets\2DGamekit\Utilities\Shaders\NormalMappedTile.shader" />
     <None Include="Assets\2DGamekit\Utilities\Shaders\Particle Standard Unlit.shader" />
     <None Include="Assets\Medieval Sword\read me.txt" />
+    <None Include="Assets\Menu_UI\Fonts\Jupiter\LICENSE.txt" />
+    <None Include="Assets\Menu_UI\Materials\UI-Default-No-Alpha.shader" />
+    <None Include="Assets\Menu_UI\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\Models\Key\readME keys.txt" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />

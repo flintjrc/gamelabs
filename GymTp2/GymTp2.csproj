@@ -303,32 +303,65 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Menu_UI\Scripts\ActiveStateToggler.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\ChangeColor.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\DragMe.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\DragPanel.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\DropMe.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\PanelManager.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\ResizePanel.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\ShowSliderValue.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Script\AnimationManager.cs" />
+    <Compile Include="Assets\Script\ButtonWithBlock.cs" />
     <Compile Include="Assets\Script\Camera.cs" />
+    <Compile Include="Assets\Script\Camera3DManagement.cs" />
+    <Compile Include="Assets\Script\DoorWithLever.cs" />
+    <Compile Include="Assets\Script\Enemies\ghostBehaviour.cs" />
     <Compile Include="Assets\Script\Enemies\Gym41_Ghost.cs" />
     <Compile Include="Assets\Script\Enemies\Scorpion\Gym12_Enemy.cs" />
+    <Compile Include="Assets\Script\Enemies\tikiBehaviour.cs" />
+    <Compile Include="Assets\Script\ExitGameOnClick.cs" />
+    <Compile Include="Assets\Script\fuelPopPickUp.cs" />
     <Compile Include="Assets\Script\Gym11_torch.cs" />
     <Compile Include="Assets\Script\Gym12_ObjectAttack.cs" />
     <Compile Include="Assets\Script\Gym12_ObjectHold.cs" />
+    <Compile Include="Assets\Script\Gym13_PlayerPush.cs" />
     <Compile Include="Assets\Script\Gym21_heal.cs" />
     <Compile Include="Assets\Script\Gym21_hurt.cs" />
     <Compile Include="Assets\Script\Gym21_Player.cs" />
     <Compile Include="Assets\Script\Gym22_flask.cs" />
     <Compile Include="Assets\Script\Gym22_torchLife.cs" />
+    <Compile Include="Assets\Script\Gym31_door.cs" />
+    <Compile Include="Assets\Script\Gym31_lever.cs" />
+    <Compile Include="Assets\Script\Gym32_ButtonAction.cs" />
+    <Compile Include="Assets\Script\Gym32_OpenGate.cs" />
     <Compile Include="Assets\Script\Gym33_CollisionController.cs" />
     <Compile Include="Assets\Script\Gym33_DoorController.cs" />
     <Compile Include="Assets\Script\Gym34_CollisionHandler.cs" />
     <Compile Include="Assets\Script\Gym41_CameraAttack.cs" />
+    <Compile Include="Assets\Script\healthPopPickUp.cs" />
     <Compile Include="Assets\Script\HUDInventory.cs" />
     <Compile Include="Assets\Script\Inventory.cs" />
     <Compile Include="Assets\Script\InventoryEventArgs.cs" />
     <Compile Include="Assets\Script\Key.cs" />
+    <Compile Include="Assets\Script\Lever.cs" />
+    <Compile Include="Assets\Script\LoadSceneOnClick.cs" />
+    <Compile Include="Assets\Script\playerBehaviour.cs" />
     <Compile Include="Assets\Script\playerController.cs" />
+    <Compile Include="Assets\Script\shoesPickUp.cs" />
+    <Compile Include="Assets\Script\swordPickUp.cs" />
+    <Compile Include="Assets\Script\torchPickUp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2DGamekit\Utilities\Shaders\NormalMappedTile.shader" />
     <None Include="Assets\2DGamekit\Utilities\Shaders\Particle Standard Unlit.shader" />
     <None Include="Assets\Medieval Sword\read me.txt" />
+    <None Include="Assets\Menu_UI\Fonts\Jupiter\LICENSE.txt" />
+    <None Include="Assets\Menu_UI\Materials\UI-Default-No-Alpha.shader" />
+    <None Include="Assets\Menu_UI\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\Models\Key\readME keys.txt" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Light.uss" />
