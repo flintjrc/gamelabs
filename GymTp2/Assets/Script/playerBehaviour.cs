@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class playerBehaviour : MonoBehaviour {
@@ -41,11 +42,23 @@ public class playerBehaviour : MonoBehaviour {
 	bool isAttached = false;
     Collider attachedCollider = null;
 
+    //Save Components
+    private SaveComponents SaveBox;
+    string currentScene;
+
 	
 
 	// Use this for initialization
 	void Start () {
-		currentItem = 0;
+        currentScene = SceneManager.GetActiveScene().name.ToString();
+        SaveBox = GameObject.FindGameObjectWithTag("SavingComponents").GetComponent<SaveComponents>();
+
+        if (currentScene == "Level_2" || currentScene == "Level_3" && SaveBox != null)
+        {
+            torchFuel = SaveBox.getFuelSave();
+            hitpoints = SaveBox.getHPSave();
+        }
+        currentItem = 0;
 		lChildRenderers=gameObject.GetComponentsInChildren<SpriteRenderer>();
 		inventory = gameObject.GetComponent<Inventory>();
 		foreach ( MeshRenderer lRenderer in gameObject.GetComponentsInChildren<MeshRenderer>()){
@@ -172,8 +185,13 @@ public class playerBehaviour : MonoBehaviour {
 		return hitpoints;
 	}
 
-//TODO: Changer le chargement de la scène pour la scène actuelle 
-	public void takeDamage(int damage){
+    public float getFuel()
+    {
+        return torchFuel;
+    }
+
+    //TODO: Changer le chargement de la scène pour la scène actuelle 
+    public void takeDamage(int damage){
 		
 		if(!immunity) {
 			hitpoints = Mathf.Max(hitpoints-damage, 0);

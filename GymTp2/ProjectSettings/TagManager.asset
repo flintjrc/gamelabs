@@ -10,6 +10,10 @@ TagManager:
   - Button
   - cameraFlash
   - sword
+  - Inventory
+  - ButtonEnd
+  - SavingComponents
+  - Audio Source
   layers:
   - Default
   - TransparentFX

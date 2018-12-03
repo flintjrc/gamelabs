@@ -61,6 +61,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Menu_UI\Scripts\ActiveStateToggler.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\ChangeColor.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\DragMe.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\DragPanel.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\DropMe.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\PanelManager.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\ResizePanel.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\ShowSliderValue.cs" />
+    <Compile Include="Assets\Menu_UI\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Script\AnimationManager.cs" />
     <Compile Include="Assets\Script\ButtonWithBlock.cs" />
     <Compile Include="Assets\Script\Camera.cs" />
@@ -69,6 +80,8 @@
     <Compile Include="Assets\Script\Enemies\ghostBehaviour.cs" />
     <Compile Include="Assets\Script\Enemies\Gym41_Ghost.cs" />
     <Compile Include="Assets\Script\Enemies\Scorpion\Gym12_Enemy.cs" />
+    <Compile Include="Assets\Script\Enemies\tikiBehaviour.cs" />
+    <Compile Include="Assets\Script\ExitGameOnClick.cs" />
     <Compile Include="Assets\Script\fuelPopPickUp.cs" />
     <Compile Include="Assets\Script\Gym11_torch.cs" />
     <Compile Include="Assets\Script\Gym12_ObjectAttack.cs" />
@@ -93,13 +106,19 @@
     <Compile Include="Assets\Script\InventoryEventArgs.cs" />
     <Compile Include="Assets\Script\Key.cs" />
     <Compile Include="Assets\Script\Lever.cs" />
+    <Compile Include="Assets\Script\LoadSceneOnClick.cs" />
+    <Compile Include="Assets\Script\MakeTransitionScene.cs" />
     <Compile Include="Assets\Script\playerBehaviour.cs" />
     <Compile Include="Assets\Script\playerController.cs" />
+    <Compile Include="Assets\Script\SaveComponents.cs" />
     <Compile Include="Assets\Script\shoesPickUp.cs" />
     <Compile Include="Assets\Script\swordPickUp.cs" />
     <Compile Include="Assets\Script\torchPickUp.cs" />
+    <None Include="Assets\Menu_UI\Fonts\Jupiter\LICENSE.txt" />
     <None Include="Assets\2DGamekit\Utilities\Shaders\Particle Standard Unlit.shader" />
+    <None Include="Assets\Menu_UI\Textures and Sprites\SF UI\Background\LICENSE.txt" />
     <None Include="Assets\Models\Key\readME keys.txt" />
+    <None Include="Assets\Menu_UI\Materials\UI-Default-No-Alpha.shader" />
     <None Include="Assets\2DGamekit\Utilities\Shaders\NormalMappedTile.shader" />
     <None Include="Assets\Medieval Sword\read me.txt" />
     <Reference Include="UnityEditor.StandardEvents">

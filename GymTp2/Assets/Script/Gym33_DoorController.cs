@@ -10,16 +10,18 @@ public class Gym33_DoorController : MonoBehaviour {
     public string keyName;
     public string id;
 
+
 	void Start ()
 	{
 	    Gym33_CollisionController.CollideADoor += CheckOpenADoor;
+        Inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
 	}
 
     private void CheckOpenADoor(object sender, CollideADoorEventArgs e)
     {
         if(Inventory.HasItem(keyName) && this.id == e.Id)
         {
-            GetComponent<Animator>().Play("DoorOpening");
+            this.GetComponent<Animator>().Play("DoorOpening");
             Inventory.RemoveItem(Inventory.GetItem(keyName));
         }
     }

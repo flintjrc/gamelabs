@@ -22,7 +22,7 @@ public class Gym33_CollisionController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Door" && CollideADoor != null)
+        if (collision.gameObject.tag == "Door" || collision.gameObject.tag == "DoorWithKeyLevel2" && CollideADoor != null)
         {
             string id = collision.gameObject.transform.parent.gameObject.GetComponent<Gym33_DoorController>().id;
             CollideADoor(this, new CollideADoorEventArgs(id));

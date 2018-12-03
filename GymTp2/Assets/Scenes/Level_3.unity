@@ -12808,7 +12808,7 @@ GameObject:
   - component: {fileID: 501639850}
   m_Layer: 5
   m_Name: HUD Inventory
-  m_TagString: Untagged
+  m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30044,7 +30044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 30.99115, y: 72.39343}
+  m_AnchoredPosition: {x: 30.99115, y: 72.39331}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!1001 &1617887954
