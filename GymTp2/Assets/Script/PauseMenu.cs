@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
     // Allows to verify if the game is paused
@@ -36,5 +37,11 @@ public class PauseMenu : MonoBehaviour {
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         IsGamePaused = false;
+    }
+
+    public void LoadMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Main_menu");
     }
 }
