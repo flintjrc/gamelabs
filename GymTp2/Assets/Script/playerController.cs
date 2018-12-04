@@ -27,6 +27,7 @@ public class playerController : MonoBehaviour {
     [SerializeField] Inventory inventory;
 
     [SerializeField] private bool shoesTaken;
+    [SerializeField] UnityEngine.UI.Slider jumpSlider;
 
     string currentScene;
 
@@ -46,6 +47,7 @@ public class playerController : MonoBehaviour {
 		playerRigibody = GetComponent<Rigidbody>();
         behaviour = GetComponent<playerBehaviour>();
         inventory = GetComponent<Inventory>();
+        jumpSlider.value = (((jumpForce-minAirJumpForce)/(maxJumpForce-minAirJumpForce)) * 100);
 		playerRigibody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
 	}
 
@@ -117,6 +119,7 @@ public class playerController : MonoBehaviour {
             if (Input.GetButton("Jump") && jumpForce < maxJumpForce && charged && grounded && shoesTaken)
             {
                 jumpForce += 10.0f;
+                jumpSlider.value = (((jumpForce-minAirJumpForce)/(maxJumpForce-minAirJumpForce)) * 100);
             }
 
             //If the player has accumulated energy and release jump or crouch button, then jump
@@ -126,6 +129,7 @@ public class playerController : MonoBehaviour {
                 nAirJump = nAirJump - 1;
                 jumpForce = minAirJumpForce;
                 grounded = false;
+                jumpSlider.value = (((jumpForce-minAirJumpForce)/(maxJumpForce-minAirJumpForce)) * 100);
             }
     }
 

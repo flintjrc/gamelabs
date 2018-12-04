@@ -115,10 +115,11 @@ public class playerBehaviour : MonoBehaviour {
 				torchFuel -= burnSpeed*Time.deltaTime;
 				fuelBar.value = ((torchFuel/torchMaxLifetime) * 100);
 			}
+			if(torchFuel<=0 ){
+				switchItem(1);
+			}
 		}
-		if(torchFuel<=0 && inventory.menuItems[currentItem].Name=="Torch"){
-			switchItem(1);
-		}
+
 		
 	}
 
@@ -150,7 +151,7 @@ public class playerBehaviour : MonoBehaviour {
 		
 		currentItem += sign;
 		currentItem %= inventory.menuItems.Count+1;
-		if(currentItem<0) currentItem = inventory.menuItems.Count-1;
+		if(currentItem<0) currentItem = inventory.menuItems.Count;
 		foreach ( SpriteRenderer lRenderer in lChildRenderers) {
 			if(lRenderer.gameObject.name =="Torch" || lRenderer.gameObject.name == "Picture Camera"|| lRenderer.gameObject.name == "fuelFlask"|| lRenderer.gameObject.name == "hpFlask"){ lRenderer.enabled= false;}
 		}
@@ -197,7 +198,6 @@ public class playerBehaviour : MonoBehaviour {
         return torchFuel;
     }
 
-    //TODO: Changer le chargement de la scène pour la scène actuelle 
     public void takeDamage(int damage){
 		
 		if(!immunity) {
@@ -205,8 +205,13 @@ public class playerBehaviour : MonoBehaviour {
 			immunityTimer = immuneTime;
 			immunity = true;
 			healthbar.value = ((float)hitpoints/(float)maxHealth) * 100;
+			if (hitpoints <= 0) {
+				GameObject AudioSource = GameObject.FindGameObjectWithTag("Audio Source");
+				if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "Level_1") DontDestroyOnLoad(SaveBox);
+            	if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "Level_1") DontDestroyOnLoad(AudioSource);
+				UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+				}
 		};
-		//if (hitpoints <= 0) UnityEngine.SceneManagement.SceneManager.LoadScene("MegaGym");
 	}
 
 	public void heal(int healed){

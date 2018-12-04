@@ -22,6 +22,7 @@ public class Gym33_DoorController : MonoBehaviour {
         if(Inventory.HasItem(keyName) && this.id == e.Id)
         {
             this.GetComponent<Animator>().Play("DoorOpening");
+            this.GetComponent<BoxCollider>().enabled = false;
             Inventory.RemoveItem(Inventory.GetItem(keyName));
         }
     }
