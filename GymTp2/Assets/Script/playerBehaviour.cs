@@ -110,14 +110,12 @@ public class playerBehaviour : MonoBehaviour {
 		}
 
 		if(inventory.menuItems.Count != 0 && currentItem != 0 && currentItem<=inventory.menuItems.Count)
-		{	if(inventory.menuItems[currentItem-1].Name=="Torch"){
+		{	if(inventory.menuItems[currentItem-1].Name=="Torch" && torchFuel>=0){
 				torchFuel = Mathf.Min(torchFuel, torchMaxLifetime);
 				torchFuel -= burnSpeed*Time.deltaTime;
 				fuelBar.value = ((torchFuel/torchMaxLifetime) * 100);
 			}
-		}
-		if(torchFuel<=0){
-			switchItem(1);
+			else if(inventory.menuItems[currentItem-1].Name=="Torch") switchItem(1);
 		}
 		
 	}

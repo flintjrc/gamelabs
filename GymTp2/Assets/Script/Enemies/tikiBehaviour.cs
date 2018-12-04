@@ -75,11 +75,12 @@ public class tikiBehaviour : MonoBehaviour {
 			enemyRigidBody.AddForce(new Vector3(sign*forcePush.x, forcePush.y, 0));
             //We need to use startCoroutine to call the function "isInvicible" because we need to measure the time of the invincible state
             StartCoroutine(isInvicible());
+            grounded = false;
         }
         
     }
 
-	    private void OnCollisionEnter(Collision collision)
+	    private void OnCollisionStay(Collision collision)
     {
         //If we have the same mask between the ground and the collider, then we are grounded.
         if ((whatIsGround.value & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer)
@@ -93,16 +94,7 @@ public class tikiBehaviour : MonoBehaviour {
 
     }
 
-		private void OnCollisionExit(Collision collision)
-    {
-        //If we have the same mask between the ground and the collider, then we are grounded.
-        if ((whatIsGround.value & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer)
-        {
-            grounded = false;
-        }
 
-
-    }
 
     void Update () {
 			playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
