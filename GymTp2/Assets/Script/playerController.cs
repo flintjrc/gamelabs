@@ -47,8 +47,8 @@ public class playerController : MonoBehaviour {
 		playerRigibody = GetComponent<Rigidbody>();
         behaviour = GetComponent<playerBehaviour>();
         inventory = GetComponent<Inventory>();
-        jumpSlider.value = (((jumpForce-minAirJumpForce)/(maxJumpForce-minAirJumpForce)) * 100);
-		playerRigibody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
+        jumpSlider.value = (((jumpForce - minAirJumpForce) / (maxJumpForce - minAirJumpForce)) * 100);
+        playerRigibody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY;
 	}
 
 
@@ -119,8 +119,8 @@ public class playerController : MonoBehaviour {
             if (Input.GetButton("Jump") && jumpForce < maxJumpForce && charged && grounded && shoesTaken)
             {
                 jumpForce += 10.0f;
-                jumpSlider.value = (((jumpForce-minAirJumpForce)/(maxJumpForce-minAirJumpForce)) * 100);
-            }
+                jumpSlider.value = (((jumpForce - minAirJumpForce) / (maxJumpForce - minAirJumpForce)) * 100);
+        }
 
             //If the player has accumulated energy and release jump or crouch button, then jump
             if (jumpForce > minAirJumpForce && (!Input.GetKey(KeyCode.LeftControl) || !Input.GetButton("Jump")))
@@ -129,8 +129,8 @@ public class playerController : MonoBehaviour {
                 nAirJump = nAirJump - 1;
                 jumpForce = minAirJumpForce;
                 grounded = false;
-                jumpSlider.value = (((jumpForce-minAirJumpForce)/(maxJumpForce-minAirJumpForce)) * 100);
-            }
+                jumpSlider.value = (((jumpForce - minAirJumpForce) / (maxJumpForce - minAirJumpForce)) * 100);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
