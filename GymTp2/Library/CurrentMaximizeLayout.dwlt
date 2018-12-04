@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 681, y: 471}
   m_MaxSize: {x: 14002, y: 14021}
   vertical: 0
-  controlID: 2338
+  controlID: 10169
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 267
-    y: 92
+    y: 19
     width: 802
     height: 337
   m_PersistentViewDataDictionary: {fileID: 0}
@@ -71,7 +71,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_MinSize: {x: 404, y: 471}
   m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 2339
+  controlID: 10170
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,11 +146,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1071
-    height: 358
+    height: 357
   m_MinSize: {x: 404, y: 221}
   m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
-  controlID: 2170
+  controlID: 10171
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -168,7 +168,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 265
-    height: 358
+    height: 357
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 6}
@@ -199,13 +199,13 @@ MonoBehaviour:
     x: 0
     y: 92
     width: 263
-    height: 337
+    height: 336
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 1040}
-    m_SelectedIDs: 1804feff
-    m_LastClickedID: -130024
-    m_ExpandedIDs: 1a04feffc4f0feff1407ffffde15ffff36f9ffff00000000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: ba65faff
+    m_LastClickedID: -367174
+    m_ExpandedIDs: 4cb4faff84b8faff6ec2faffd4c4faff74c7faff92cefaffc8cffaffdad0faff6ed3faff94dafaffe4a2fcff0af5fcff1c07fdff8412fdff881cfdffa224fdff002afdff1a04feffc4f0feff1407ffffde15ffff36f9ffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -246,7 +246,7 @@ MonoBehaviour:
     x: 265
     y: 0
     width: 806
-    height: 358
+    height: 357
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 2}
@@ -279,7 +279,7 @@ MonoBehaviour:
     x: 267
     y: 92
     width: 802
-    height: 337
+    height: 336
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
   lastFramingTime: 12331.24014216804
@@ -287,9 +287,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 24.587399, y: 1.4190701, z: 0}
+    m_Target: {x: -43.778023, y: 4.631516, z: 0}
     speed: 2
-    m_Value: {x: 24.587399, y: 1.4190701, z: 0}
+    m_Value: {x: -43.778023, y: 4.631516, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -321,9 +321,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0, y: -0, z: -0, w: -0.99999994}
   m_Size:
-    m_Target: 11.639003
+    m_Target: 12.672688
     speed: 2
-    m_Value: 11.639003
+    m_Value: 12.672688
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -358,7 +358,7 @@ MonoBehaviour:
     x: 267
     y: 92
     width: 802
-    height: 337
+    height: 336
   m_PersistentViewDataDictionary: {fileID: 0}
 --- !u!114 &10
 MonoBehaviour:
@@ -375,9 +375,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 358
+    y: 357
     width: 1071
-    height: 277
+    height: 278
   m_MinSize: {x: 230, y: 250}
   m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 11}
@@ -407,9 +407,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 450
+    y: 449
     width: 1069
-    height: 256
+    height: 257
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -423,20 +423,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Runemark Assets/Freebies/Polygon Desert Pack/Prefabs
+    - Assets/Cartoon Temple Building Kit/Prefabs/Decorative Prefabs/Vegetation Prefabs
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 58
   m_LastFolders:
-  - Assets/Runemark Assets/Freebies/Polygon Desert Pack/Prefabs
-  m_LastFoldersGridSize: -1
+  - Assets/Cartoon Temple Building Kit/Prefabs/Decorative Prefabs/Vegetation Prefabs
+  m_LastFoldersGridSize: 58
   m_LastProjectPath: C:\Users\Valerie\Desktop\Polytechnique\Automne 2018\LOG4715\TPs\gamelabs\GymTp2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 293}
-    m_SelectedIDs: 7a580000
-    m_LastClickedID: 22650
-    m_ExpandedIDs: 00000000382b0000b02b0000a22c0000bc2c00005e2d0000422e000044310000f23300006e340000805800008c5800009258000000ca9a3b
+    scrollPos: {x: 0, y: 80}
+    m_SelectedIDs: 10e20000
+    m_LastClickedID: 57872
+    m_ExpandedIDs: 00000000382b0000b02b00005a2c0000a22c0000bc2c00005e2d0000422e000044310000f23300006e3400009258000052bb000086bb000094bb000078e1000084e10000cee1000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -464,7 +464,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000382b0000b02b00005a2c0000a22c0000bc2c00005e2d0000422e000044310000f23300006e34000000ca9a3b
+    m_ExpandedIDs: 00000000382b0000b02b00005a2c0000a22c0000bc2c00005e2d0000422e000044310000f23300006e3400009258000052bb000086bb000094bb000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -489,8 +489,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 1804feff
-    m_LastClickedInstanceID: -130024
+    m_SelectedInstanceIDs: ba65faff
+    m_LastClickedInstanceID: -367174
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000000000000c4110000
     m_RenameOverlay:
@@ -517,7 +517,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_GridSize: 58
   m_DirectoriesAreaWidth: 166
 --- !u!114 &12
 MonoBehaviour:
@@ -599,7 +599,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewResizer:
-    m_CachedPref: 100
+    m_CachedPref: 218
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
