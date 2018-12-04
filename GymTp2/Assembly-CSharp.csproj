@@ -76,9 +76,12 @@
     <Compile Include="Assets\Script\ButtonWithBlock.cs" />
     <Compile Include="Assets\Script\Camera.cs" />
     <Compile Include="Assets\Script\Camera3DManagement.cs" />
+    <Compile Include="Assets\Script\doorKeyControl.cs" />
     <Compile Include="Assets\Script\DoorWithLever.cs" />
+    <Compile Include="Assets\Script\EndingCollisionController.cs" />
     <Compile Include="Assets\Script\Enemies\ghostBehaviour.cs" />
     <Compile Include="Assets\Script\Enemies\Gym41_Ghost.cs" />
+    <Compile Include="Assets\Script\Enemies\paintingBehaviour.cs" />
     <Compile Include="Assets\Script\Enemies\Scorpion\Gym12_Enemy.cs" />
     <Compile Include="Assets\Script\Enemies\tikiBehaviour.cs" />
     <Compile Include="Assets\Script\ExitGameOnClick.cs" />

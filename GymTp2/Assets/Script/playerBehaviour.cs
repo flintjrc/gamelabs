@@ -264,6 +264,23 @@ public class playerBehaviour : MonoBehaviour {
 		fuelBar.value = ((torchFuel/torchMaxLifetime) * 100);
 	}
 
+    private void OnTriggerEnter(Collider collision)
+    {
+        //If there's an IInventory component attached, it adds it to the inventory
+        IInventoryItem item = collision.GetComponent<IInventoryItem>();
+        if (item != null)
+        {
+            inventory.AddItem(item);
+        }
+    }
 
+
+	private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Door" || collision.gameObject.tag == "DoorWithKeyLevel2")
+        {
+            collision.collider.GetComponentInParent<doorKeyControl>().openDoor();
+    	}
+	}
 	
 }

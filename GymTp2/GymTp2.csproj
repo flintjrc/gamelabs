@@ -238,26 +238,68 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\UnityAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Timeline">
       <HintPath>Library\UnityAssemblies\UnityEngine.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Timeline">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TreeEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.TreeEditor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.GoogleAudioSpatializer">
+      <HintPath>Library\UnityAssemblies\UnityEditor.GoogleAudioSpatializer.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.GoogleAudioSpatializer">
       <HintPath>Library\UnityAssemblies\UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.HoloLens">
+      <HintPath>Library\UnityAssemblies\UnityEditor.HoloLens.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.SpatialTracking">
+      <HintPath>Library\UnityAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>Library\UnityAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.VR">
+      <HintPath>Library\UnityAssemblies\UnityEditor.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>Library\UnityAssemblies\UnityEngine.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+      <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>Library\UnityAssemblies\mscorlib.dll</HintPath>
@@ -286,122 +328,56 @@
     <Reference Include="Boo.Lang">
       <HintPath>Library\UnityAssemblies\Boo.Lang.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-    </Reference>
     <Reference Include="Facebook.Unity.Settings">
       <HintPath>Library\FacebookSDK\Facebook.Unity.Settings.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Menu_UI\Scripts\ActiveStateToggler.cs" />
-    <Compile Include="Assets\Menu_UI\Scripts\ApplicationManager.cs" />
-    <Compile Include="Assets\Menu_UI\Scripts\ChangeColor.cs" />
-    <Compile Include="Assets\Menu_UI\Scripts\DragMe.cs" />
-    <Compile Include="Assets\Menu_UI\Scripts\DragPanel.cs" />
-    <Compile Include="Assets\Menu_UI\Scripts\DropMe.cs" />
-    <Compile Include="Assets\Menu_UI\Scripts\PanelManager.cs" />
-    <Compile Include="Assets\Menu_UI\Scripts\ResizePanel.cs" />
-    <Compile Include="Assets\Menu_UI\Scripts\ScrollDetailTexture.cs" />
-    <Compile Include="Assets\Menu_UI\Scripts\ShowSliderValue.cs" />
-    <Compile Include="Assets\Menu_UI\Scripts\TiltWindow.cs" />
-    <Compile Include="Assets\Script\AnimationManager.cs" />
-    <Compile Include="Assets\Script\ButtonWithBlock.cs" />
-    <Compile Include="Assets\Script\Camera.cs" />
-    <Compile Include="Assets\Script\Camera3DManagement.cs" />
-    <Compile Include="Assets\Script\DoorWithLever.cs" />
-    <Compile Include="Assets\Script\Enemies\ghostBehaviour.cs" />
-    <Compile Include="Assets\Script\Enemies\Gym41_Ghost.cs" />
-    <Compile Include="Assets\Script\Enemies\Scorpion\Gym12_Enemy.cs" />
-    <Compile Include="Assets\Script\Enemies\tikiBehaviour.cs" />
-    <Compile Include="Assets\Script\ExitGameOnClick.cs" />
-    <Compile Include="Assets\Script\fuelPopPickUp.cs" />
-    <Compile Include="Assets\Script\Gym11_torch.cs" />
-    <Compile Include="Assets\Script\Gym12_ObjectAttack.cs" />
-    <Compile Include="Assets\Script\Gym12_ObjectHold.cs" />
-    <Compile Include="Assets\Script\Gym13_PlayerPush.cs" />
-    <Compile Include="Assets\Script\Gym21_heal.cs" />
-    <Compile Include="Assets\Script\Gym21_hurt.cs" />
-    <Compile Include="Assets\Script\Gym21_Player.cs" />
-    <Compile Include="Assets\Script\Gym22_flask.cs" />
-    <Compile Include="Assets\Script\Gym22_torchLife.cs" />
-    <Compile Include="Assets\Script\Gym31_door.cs" />
-    <Compile Include="Assets\Script\Gym31_lever.cs" />
-    <Compile Include="Assets\Script\Gym32_ButtonAction.cs" />
-    <Compile Include="Assets\Script\Gym32_OpenGate.cs" />
-    <Compile Include="Assets\Script\Gym33_CollisionController.cs" />
-    <Compile Include="Assets\Script\Gym33_DoorController.cs" />
-    <Compile Include="Assets\Script\Gym34_CollisionHandler.cs" />
-    <Compile Include="Assets\Script\Gym41_CameraAttack.cs" />
-    <Compile Include="Assets\Script\healthPopPickUp.cs" />
-    <Compile Include="Assets\Script\HUDInventory.cs" />
-    <Compile Include="Assets\Script\Inventory.cs" />
-    <Compile Include="Assets\Script\InventoryEventArgs.cs" />
-    <Compile Include="Assets\Script\Key.cs" />
-    <Compile Include="Assets\Script\Lever.cs" />
-    <Compile Include="Assets\Script\LoadSceneOnClick.cs" />
-    <Compile Include="Assets\Script\MakeTransitionScene.cs" />
-    <Compile Include="Assets\Script\PauseMenu.cs" />
-    <Compile Include="Assets\Script\playerBehaviour.cs" />
-    <Compile Include="Assets\Script\playerController.cs" />
-    <Compile Include="Assets\Script\SaveComponents.cs" />
-    <Compile Include="Assets\Script\shoesPickUp.cs" />
-    <Compile Include="Assets\Script\swordPickUp.cs" />
-    <Compile Include="Assets\Script\torchPickUp.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\BloomComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\DitheringComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\EyeAdaptationComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\FogComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\FxaaComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\GrainComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\MotionBlurComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\TaaComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\UserLutComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Components\VignetteComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\BloomModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\BuiltinDebugViewsModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\ColorGradingModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\DepthOfFieldModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\FogModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\GrainModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\ScreenSpaceReflectionModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\UserLutModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Models\VignetteModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\PostProcessingComponent.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\PostProcessingContext.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\PostProcessingModel.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\PostProcessingProfile.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Utils\ColorGradingCurve.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
-    <Compile Include="Assets\SineVFX\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\FastAction.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\MaterialReferenceManager.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\PackageResourceImporterWindow.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TextContainer.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TextMeshPro.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TextMeshProUGUI.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Asset.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_ColorGradient.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Compatibility.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_CoroutineTween.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_DefaultControls.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Dropdown.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_FontAsset.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_InputField.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_InputValidator.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_LineInfo.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_ListPool.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_MaterialManager.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_MeshInfo.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_ObjectPool.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_ScrollbarEventHandler.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SelectionCaret.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Settings.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Sprite.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SpriteAnimator.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SpriteAsset.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SpriteAssetImportFormats.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Style.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_StyleSheet.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SubMesh.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_SubMeshUI.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_Text.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_TextElement.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_TextInfo.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_TextUtilities.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_UpdateManager.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_UpdateRegistery.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMP_XmlTagStack.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_EventManager.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_ExtensionMethods.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_FontUtilities.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_MeshUtilities.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_Private.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_ShaderUtilities.cs" />
+    <Compile Include="Packages\com.unity.textmeshpro\Scripts\Runtime\TMPro_UGUI_Private.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\2DGamekit\Utilities\Shaders\NormalMappedTile.shader" />

@@ -94,6 +94,16 @@ public class tikiBehaviour : MonoBehaviour {
 
     }
 
+     private void OnCollisionExit(Collision collision)
+    {
+        //If we have the same mask between the ground and the collider, then we are grounded.
+        if ((whatIsGround.value & 1 << collision.gameObject.layer) == 1 << collision.gameObject.layer)
+        {
+            grounded = true;
+		}
+
+    }
+
 
 
     void Update () {
