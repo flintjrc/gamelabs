@@ -10,7 +10,7 @@ public class EndingCollisionController : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Friend")
+        if (collision.gameObject.tag == "Player")
         {
             EndingMenuUI.SetActive(true);
             Time.timeScale = 0f;
